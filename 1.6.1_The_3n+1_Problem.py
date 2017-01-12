@@ -1,26 +1,27 @@
-## INCOMPLETE ##
+# INCOMPLETE #
 i = int(input())
 j = int(input())
 
-# For a given sequence, (n,[n+1],[n+2]....,1), adj[n] = ([n+1], count(n+1)+1), where
-# count(j) is the length quantity of elements needed to reach 1.
+# For a given sequence, (n,[n+1],[n+2]....,1), adj[n] = ([n+1], count(n+1)+1),
+# where count(j) is the length quantity of elements needed to reach 1.
 
 adj = {}
 max_count = 0
 
-for k in range(i,j+1):
+
+for k in range(i, j+1):
     if k not in adj:
-        q=k
+        q = k
         # Generates a sequence
         while(True):
-            m=q
-            if m==1:
+            m = q
+            if m == 1:
                 break
-            if m%2==0:
+            if m % 2 == 0:
                 q = int(m/2)
             else:
-                q = int(3*m +1)
-            adj[m] = [q,0]
+                q = int(3*m + 1)
+            adj[m] = [q, 0]
 
 # Recursively count the length of the sequence needed to get to n to 1
 # Ex.
@@ -32,17 +33,17 @@ for k in range(i,j+1):
 #    adj[1] = [1, count(1)]
 #    count(1) = 1
 
-def count(i, max_count):
+
+def count(i):
     if(i == 1):
         return 0
     else:
-        adj[i][1] = count(adj[i][0], max_count) + 1
-        max_count = max(max_count, adj[i][1])
+        adj[i][1] = count(adj[i][0]) + 1
         return adj[i][1]
 
 for k in adj.keys():
     if (adj[k][1] == 0):
-        count(k, max_count)
+        count(k)
 
 
 print(max_count)
