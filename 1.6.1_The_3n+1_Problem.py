@@ -22,10 +22,6 @@ for k in range(i,j+1):
                 q = int(3*m +1)
             adj[m] = [q,0]
 
-
-
-
-
 # Recursively count the length of the sequence needed to get to n to 1
 # Ex.
 #    22 11 34 17 52 26 13 40 20 10 5 16 8 4 2 1
@@ -36,15 +32,15 @@ for k in range(i,j+1):
 #    adj[1] = [1, count(1)]
 #    count(1) = 1
 
-
 def count(i, max_count):
     if(i == 1):
-        return 1
+        return 0
     else:
-        adj[i] = [adj[i][0], count(adj[i][0])]
-        max_count = max(max_count, count(adj[i][0]))
+        adj[i][1] = count(adj[i][0], max_count) + 1
+        max_count = max(max_count, adj[i][1])
+        return adj[i][1]
 
-for k in range(i,j+1):
+for k in adj.keys():
     if (adj[k][1] == 0):
         count(k, max_count)
 
