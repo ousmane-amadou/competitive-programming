@@ -1,6 +1,5 @@
-# INCOMPLETE #
-i = int(input())
-j = int(input())
+# COMPLETE !!#
+i, j = map(int, input().split())
 
 # For a given sequence, (n,[n+1],[n+2]....,1), adj[n] = ([n+1], count(n+1)+1),
 # where count(j) is the length quantity of elements needed to reach 1.
@@ -46,4 +45,7 @@ for k in adj.keys():
         count(k)
 
 
-print(max_count)
+maximum = 0
+for k in adj.values():
+    maximum = max(maximum, k[1])
+print(str(maximum+1))
