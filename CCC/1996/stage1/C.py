@@ -7,7 +7,6 @@
     2. Let k bt the number of ones in the bit string.
     3. Find the initial bitstring with k ones followed by n-k zeroes.
     4. Left shift all the bits with the exception of the first bit.
-    5.
 
     Consider n=6, k=3.
     1 11000
@@ -29,9 +28,15 @@ for i in range(nc):
     cases[i][0], cases[i][1] = map(int, input().split())
 
 for case in cases:
-    ibp = 0
     n, k = case
-    for i in range(k):
-        ibp += 2**(n-i)
-
+    ibp = '1'*k + '0'*(n-k)     # initial binary pattern
     print(ibp)
+    for i in range(k):
+        cbh = ibp[:i]
+        cbb = ibp[i:]
+
+        for j in range(0, (n-k)):
+            # Shifts the body of the binray pattern to the right
+            cbb = '0' + cbb[:-1]
+            fbp = cbh+cbb
+            print(fbp)
