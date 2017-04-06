@@ -6,7 +6,7 @@
     1. Let n be the length of the bit string.
     2. Let k bt the number of ones in the bit string.
     3. Find the initial bitstring with k ones followed by n-k zeroes.
-    4. Left shift all the bits with the exception of the first bit.
+    4. Left shift all the bits with the exception of the first bit.;
 
     Consider n=6, k=3.
     1 11000
@@ -19,6 +19,8 @@
     11 0011
 
     111 000
+
+    O(n)
 """
 
 nc = int(input())           # Read in number of cases
