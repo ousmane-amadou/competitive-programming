@@ -7,90 +7,91 @@ VALS = {'1': 1, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8,
 
 
 def vald(a):
-    return VALS[a]
+    return VALS[a[0]]
 
 
 def isSF(h):
     r = [-1, -1]
     if h[0] == h[1] == h[2] == h[3] == h[4]:
-        r = [10, h[4][0]]
+        r = [10, VALS[h[4][0]]]
     return r
 
 
 def isFK(h):
-    sorted(vald, key=vald)
+    sorted(h, key=vald)
     r = [-1, -1]
     if h[0][0] == h[1][0] == h[2][0] == h[3][0]:
-        r = [9, h[3][0]]
+        r = [9, VALS[h[3][0]]]
     elif [1][0] == h[2][0] == h[3][0] == h[4][0]:
-        r = [9, h[3][0]]
+        r = [9, VALS[h[3][0]]]
     return r
 
 
 def isFH(h):
-    sorted(vald, key=vald)
+    sorted(h, key=vald)
     r = [-1, -1]
     if (h[0][0] == h[1][0] == h[2][0]) and (h[3][0] == h[4][0]):
-        r = [8, h[2][0]]
+        r = [8, VALS[h[2][0]]]
     elif (h[1][0] == h[2][0]) and (h[3][0] == h[4][0] == h[5][0]):
-        r = [8, h[3][0]]
+        r = [8, VALS[h[3][0]]]
     return r
 
 
 def isFL(h):
-    sorted(vald, key=vald)
+    sorted(h, key=vald)
     r = [-1, -1]
     if h[0][1] == h[1][1] == h[2][1] == h[3][1] == h[4][1]:
-        r = [7, h[4][1]]
+        r = [7, VALS[h[4][0]]]
     return r
 
 
 def isST(h):
-    sorted(vald, key=vald)
+    sorted(h, key=vald)
     r = [-1, -1]
     bf1 = VALS[h[1][0]] == (VALS[h[0][0]] + 1)
     bf2 = VALS[h[2][0]] == (VALS[h[1][0]] + 1)
     bf3 = VALS[h[3][0]] == (VALS[h[2][0]] + 1)
     bf4 = VALS[h[4][0]] == (VALS[h[3][0]] + 1)
     if bf1 and bf2 and bf3 and bf4:
-        r = [6, h[4][0]]
+        r = [6, VALS[h[4][0]]]
 
-    return [-1, -1]
+    return r
 
 
 def isTOK(h):
-    sorted(vald, key=vald)
+    sorted(h, key=vald)
     r = [-1, -1]
     bf1 = (h[0][0] == h[1][0] == h[2][0])
     bf2 = (h[1][0] == h[2][0] == h[3][0])
     bf3 = (h[2][0] == h[3][0] == h[4][0])
     if bf1 or bf2 or bf3:
-        r = [5, h[2][0]]
+        r = [5, VALS[h[2][0]]]
+    return r
 
 
 def is2P(h):
-    sorted(vald, key=vald)
+    sorted(h, key=vald)
     r = [-1, -1]
     if h[0][0] == h[1][0] and h[1][0] == h[2][0]:
-        r = [4, h[1][0]]
+        r = [4, VALS[h[1][0]]]
     if h[2][0] == h[3][0] and h[3][0] == h[4][0]:
-        r = [4, max(r[1], h[3][0])]
+        r = [4, max(r[1], VALS[h[3][0]])]
     return r
 
 
 def isP(h):
-    sorted(vald, key=vald)
+    sorted(h, key=vald)
     r = [-1, -1]
     if h[0][0] == h[1][0] or h[1][0] == h[2][0]:
-        r = [3, h[1][0]]
+        r = [3, VALS[h[1][0]]]
     elif h[2][0] == h[3][0] or h[3][0] == h[4][0]:
-        r = [3, h[3][0]]
+        r = [3, VALS[h[3][0]]]
     return r
 
 
 def isHC(h):
-    sorted(vald, key=vald)
-    return [2, h[4][0]]
+    sorted(h, key=vald)
+    return [2, VALS[h[4][0]]]
 
 while True:
     cards = input().split(' ')
@@ -133,6 +134,9 @@ while True:
         elif i == 10:
             p1r = isSF(p1h)
             p2r = isSF(p2h)
+        else:
+            break
+        print(i, p1r, p2r)
         i -= 1
         # Handle Aftermath of looking at hands
         if p1r[0] == -1 and p2r[0] == -1:
@@ -151,8 +155,8 @@ while True:
             else:
                 winner = 2
     if winner == -1:
-        print 'Tie.'
+        print('Tie.')
     elif winner == 1:
-        print 'Black Wins.'
+        print('Black Wins.')
     else:
-        print 'White Wins.'
+        print('White Wins.')
