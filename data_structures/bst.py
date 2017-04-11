@@ -5,6 +5,53 @@ class bst:
         self.l = None
         self.r = None
 
+    def minimum(self):
+        if self.l is None:
+            return self.key
+        else:
+            return minimum(self.l)
+
+    def search(self, k):
+        """ (bst, int) -> int
+             Searches a binary search tree for key k. If key k in bst, return
+             True. Retrun False Otherwise.
+
+            >>> a = bst(6)
+            >>> a.l = bst(3)
+            >>> a.l.l = bst(2)
+            >>> a.l.r = bst(4)
+            >>> a.r = bst(8)
+            >>> a.search(8)
+            True
+
+            >>> a = bst(6)
+            >>> a.l = bst(3)
+            >>> a.l.l = bst(2)
+            >>> a.l.r = bst(4)
+            >>> a.r = bst(8)
+            >>> a.search(9)
+            False
+
+            >>> a = bst(6)
+            >>> a.l = bst(3)
+            >>> a.l.l = bst(2)
+            >>> a.l.r = bst(4)
+            >>> a.r = bst(8)
+            >>> a.search(2)
+            True
+        """
+        if self.key == k:
+            return True
+
+        if self.key < k:
+            if self.r is not None:
+                return self.r.search(k)
+        else:
+            if self.l is not None:
+                return self.l.search(k)
+
+        return False
+
     def getInOrder(self):
         """ (bst) -> Object[]
             Returns an array of the elements in this binary search tree
