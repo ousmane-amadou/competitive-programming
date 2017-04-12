@@ -5,6 +5,30 @@ class bst:
         self.l = None
         self.r = None
 
+    def insert(self, i):
+        """ (bst, int) -> None
+            Inserts an element with key i, into a binary search tree
+
+            >>> a = bst(6)
+            >>> a.insert(5)
+            >>> a.insert(10)
+            >>> a.l.key
+            5
+            >>> a.r.key
+            10
+        """
+        if self.key < i:
+            if self.r is None:
+                self.r = bst(i)
+            else:
+                self.r.insert(i)
+
+        if self.key >= i:
+            if self.l is None:
+                self.l = bst(i)
+            else:
+                self.l.insert(i)
+
     def minimum(self):
         if self.l is None:
             return self.key
@@ -66,11 +90,11 @@ class bst:
             [2, 3, 4, 6, 8]
 
             >>> a = bst(8)
-            >>> a.l = bst(3)
-            >>> a.l.l = bst(1)
-            >>> a.l.r = bst(4)
-            >>> a.r = bst(10)
-            >>> a.r.l = bst(9)
+            >>> a.insert(3)
+            >>> a.insert(1)
+            >>> a.insert(4)
+            >>> a.insert(10)
+            >>> a.insert(9)
             >>> a.getInOrder()
             [1, 3, 4, 8, 9, 10]
         """
