@@ -30,3 +30,6 @@ def max_heapify(A, i):
         A[i] = A[largest]
         A[largest] = A[temp]
         max_heapify(A, largest)
+
+
+def build_max_heap(A):
