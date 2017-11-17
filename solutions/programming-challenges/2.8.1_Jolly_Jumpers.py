@@ -1,28 +1,25 @@
-# SOLN:
-#   Keep a
-#
-#
-
+# Solved
+# Type: Ad-hoc
+# Skill: Beginner
+# Concepts Involved : Arrays
 while True:
-    stdin = input()
-    if stdin == ' ':
-        break
+    n = map(int, raw_input().split(" "))
+    n = n[1:]
 
-    stdin = list(map(int, stdin.split()))
-    m = max(stdin) - 1
-    jld = {}                                # Jolly Dictionary = Holds
-    s = 0
-    for i in range(len(stdin) - 1):
-        diff = stdin[i+1] - stdin[i]
-        if diff < 0:
-            diff = -1*diff
+    c = 0                  # The number of unique jumps that have occured
 
-        if not diff > m:
-            if diff not in jla.keys():
-                s += 1
-                jla[diff] = 1
+    jump = [False]*3000    # jump[i] is a bool value representing whether
+                           # a jump of i has occured in the sequence
 
-    if s == max(stdin) - 1:
-        print("Jolly")
+    jump[0] = True         # We'd like to ignore jumps of 0
+
+    for i in range(len(n)-1):
+        diff = abs(n[i] - n[i+1])
+        if jump[diff] == False and diff <= len(n)-1:
+            jump[diff] = True
+            c += 1
+
+    if c == len(n)-1:
+        print "Jolly"
     else:
-        print("Not Jolly")
+        print "Not Jolly"
