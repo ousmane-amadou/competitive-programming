@@ -2,7 +2,7 @@ The various algorithms implemented in this module solve the sorting problem.
 
 H~2~0
 ## Sorting Problem
-Input: A sequance of n numbers < a~1 , a~2, a~3, ... a~n /> <br />
+Input: A sequance of n numbers < a<sub>1</sub>, a<sub>2</sub>, a<sub>3</sub>, ... a<sub>n</sub> > <br />
 Output: A permutation (reordering)
 
 ## Glossary of Alogrithms
