@@ -1,3 +1,6 @@
+"""
+
+"""
 class bst:
     def __init__(self, i):
         self.key = i
@@ -7,15 +10,15 @@ class bst:
 
     def insert(self, i):
         """ (bst, int) -> None
-            Inserts an element with key i, into a binary search tree
+        Inserts an element with key i, into a binary search tree
 
-            >>> a = bst(6)
-            >>> a.insert(5)
-            >>> a.insert(10)
-            >>> a.l.key
-            5
-            >>> a.r.key
-            10
+        >>> a = bst(6)
+        >>> a.insert(5)
+        >>> a.insert(10)
+        >>> a.l.key
+        5
+        >>> a.r.key
+        10
         """
         if self.key < i:
             if self.r is None:
@@ -33,7 +36,7 @@ class bst:
         if self.l is None:
             return self.key
         else:
-            return minimum(self.l)
+            return self.l.minimum()
 
     def search(self, k):
         """ (bst, int) -> int
