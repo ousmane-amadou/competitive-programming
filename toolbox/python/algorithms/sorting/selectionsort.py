@@ -1,6 +1,16 @@
 from typing import List
 
 """ Selection Sort
+==== Description ====
+Given an array A[j...n], find the minimum element A[m]..
+(in other words 'select' the minimum element)
+
+Swap A[m] and A[j].
+
+Incrment j until j == n. In this case the entire list 
+A[j...n] will be sorted.
+
+==== More Info ====
 * Also refferred to as sinking sort.
 * Worst case occurs when array is reverse sorted. 
 """
