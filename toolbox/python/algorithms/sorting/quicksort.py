@@ -20,6 +20,10 @@ array A[p...r]   is now sorted.
 Introduction to Algorithms, Cormen, Leiserson, Rivest, Stein
 
 [1, 2, 3, 4, 5, 6, 7]
+
+====== More Info =====
+* To produce worst case, provide an input that is reverse sorted
+and always choose the pivot to be the first element
 """
 
 def swap(lst: List[object], index1:int, index2:int) -> None:
