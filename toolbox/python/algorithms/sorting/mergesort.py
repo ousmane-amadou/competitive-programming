@@ -12,18 +12,49 @@ def swap(lst: List[object], index1:int, index2:int) -> None:
     lst[index1] = lst[index2]
     lst[index2] = temp
 
-def merge(lst: List[object], p:int, q:int, r:int) -> None:
+def merge(lst: List[object], start:int, mid:int, end:int) -> None:
+    """ merges A[start:mid] and A[mid:end] into a new A[start:end]. (That
+    is sorted)
+
+    >>> a = [1, 3, 5, 2, 6, 8]
+    >>> merge(a, 0, 3, 6)
+    >>> print(a)
+    [1, 2, 3, 5, 6, 8]
+
+    >>> a = [1, 3, 9, 2, 6, 8]
+    >>> merge(a, 0, 3, 6)
+    >>> print(a)
+    [1, 2, 3, 6, 8, 9]
     """
-    precondition: p < q < r
+    temp = []
+
+    i = start
+    j = mid
+
+    while i < mid and j < end:
+        if lst[i] <= lst[j]:
+            temp.append(lst[i])
+            i += 1
+        else:
+            temp.append(lst[j])
+            j += 1
+
+    temp.extend(lst[i:mid])       # adds any remaining elements
+    temp.extend(lst[j:end])       # adds any remaining elements
+
+    for i in range(len(temp)):
+        lst[start + i] = temp[i]
+
+
+
+def sort(lst: List[object], start:int, end:int) -> None:
+    """ Sorts lst[start:end]
     """
-
-
-def sort(lst: List[object], p:int, r:int) -> None:
-    """"""
-    if p < r:
-        q = (p+r) // 2
-
-        sort(lst, p, q)
-        sort(lst, q+1, r)
-        merge(lst, p, q, r)
+    if (start - end) <= 1:
+        return
+    else:
+        mid = (start+end) // 2
+        sort(lst, start, mid)
+        sort(lst, mid, end)
+        merge(lst, start, mid, end)
 
