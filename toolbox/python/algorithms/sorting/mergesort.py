@@ -1,18 +1,20 @@
-from typing import List
-
 """ MergeSort
 * Merge sort can be slower than bubble and insertion sort for
-smaller input sizes 
+smaller input sizes
 """
 
-def swap(lst: List[object], index1:int, index2:int) -> None:
+from typing import List
+
+
+def swap(lst: List[object], index1: int, index2: int) -> None:
     """ Swap items <index1> and <index2> in the List <lst>.
     """
     temp = lst[index1]
     lst[index1] = lst[index2]
     lst[index2] = temp
 
-def merge(lst: List[object], start:int, mid:int, end:int) -> None:
+
+def merge(lst: List[object], start: int, mid: int, end: int) -> None:
     """ merges A[start:mid] and A[mid:end] into a new A[start:end]. (That
     is sorted)
 
@@ -46,8 +48,7 @@ def merge(lst: List[object], start:int, mid:int, end:int) -> None:
         lst[start + i] = temp[i]
 
 
-
-def sort(lst: List[object], start:int, end:int) -> None:
+def sort(lst: List[object], start: int, end: int) -> None:
     """ Sorts lst[start:end]
     """
     if (start - end) <= 1:
@@ -57,4 +58,3 @@ def sort(lst: List[object], start:int, end:int) -> None:
         sort(lst, start, mid)
         sort(lst, mid, end)
         merge(lst, start, mid, end)
-
