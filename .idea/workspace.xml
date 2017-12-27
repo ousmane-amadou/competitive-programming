@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="97fe6517-6f6d-4f4c-b89b-b0c7991f2058" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/toolbox/c++/sorting/mergesort.cpp" afterPath="$PROJECT_DIR$/toolbox/c++/sorting/mergesort.cpp" />
-      <change beforePath="$PROJECT_DIR$/toolbox/python/algorithms/sorting/mergesort.py" afterPath="$PROJECT_DIR$/toolbox/python/algorithms/sorting/mergesort.py" />
-    </list>
+    <list default="true" id="97fe6517-6f6d-4f4c-b89b-b0c7991f2058" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,8 +14,8 @@
       <file leaf-file-name="mergesort.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/toolbox/python/algorithms/sorting/mergesort.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-323">
-              <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+            <state relative-caret-position="487">
+              <caret line="60" column="0" lean-forward="true" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -398,8 +394,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/toolbox/python/algorithms/sorting/mergesort.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-323">
-          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        <state relative-caret-position="487">
+          <caret line="60" column="0" lean-forward="true" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
           <folding />
         </state>
       </provider>
