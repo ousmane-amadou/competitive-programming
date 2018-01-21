@@ -32,7 +32,7 @@ int pop(stack*s) {
     s->items[s->size] = 0; // Delete top item
     s->size--; s->last--;
     return i;
-  }
+  } return -1;
 }
 
 int main() {}
