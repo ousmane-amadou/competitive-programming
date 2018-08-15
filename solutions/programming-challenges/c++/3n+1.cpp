@@ -4,7 +4,6 @@ Problem Type: Ad hoc
 */
 
 #include <iostream>
-#include <vector>
 using namespace std;
 
 int i = 0, j = 0, mc = 1;
