@@ -1,7 +1,6 @@
 /*
-Programming Challenges
-Problem 1.6 The 3n+1 Problem
-Solution
+Programming Challenges; 1.6.1 The 3n+1 Problem
+Problem Type: Ad hoc
 */
 
 #include <iostream>
@@ -24,5 +23,5 @@ int main() {
     }
     mc = max(mc, cycle);
   }
-  cout << mc;
+  printf("%d %d %d", i, j, mc);
 }
