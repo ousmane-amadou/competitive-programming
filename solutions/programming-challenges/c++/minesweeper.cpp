@@ -5,6 +5,7 @@ Problem Type: Ad hoc
 #include <iostream>
 using namespace std;
 
+const int MAX_SIZE = 100;
 const int EMPTY = 1;
 const int MINE = -1;
 
@@ -16,35 +17,41 @@ Precondition (s):
 (2) 0 < square[0] <= size(mine_field)
 (3) 0 < square[1] <= size(mine_field[0])
 */
-int adj_mines(int mine_field[][], int square[]) {
-  int row = square[0]; int col = square[1];
+int adj_mines(int *mine_field, int square[]) {
+  int row = square[0];
+  int col = square[1];
   int num_mines = 0;
 
-  if (mine_field[row+1][col] == MINE) {
+  if (*mine_field)[row+1][col] == MINE) {
     num_mines++;
   }
 
-  if (mine_field[row][col+1] == MINE) {
+  if (mine_field[row][col + 1] == MINE) {
     num_mines++;
   }
 
   if (col != 0) {
-    if (mine_field[row][col-1] == MINE) {
+    if (mine_field[row][col - 1] == MINE) {
       num_mines++;
     }
   }
 
   if (row != 0) {
-    if (mine_field[row-1][col] == MINE) {
+    if (mine_field[row - 1][col] == MINE) {
       num_mines++;
     }
   }
   return num_mines;
 }
 
-int n, m;         // Represents the number of rows and columns in input matrix
-int mine_field[100][100];       // Represents the input matrix
-int adjcancey_field[100][100];      // Represents the output matrix
+// Self notes
+// 1. Arrays size must be known at compile time
+// 2. Items in an array are defult initialized.
+// 3. Array literals: {1, 2, 3, 4}
+
+int n, m; // Represents the number of rows and columns in input matrix
+int mine_field[MAX_SIZE][MAX_SIZE];      // Represents the input matrix
+int adjcancey_field[MAX_SIZE][MAX_SIZE]; // Represents the output matrix
 
 int main() {
   char input;
