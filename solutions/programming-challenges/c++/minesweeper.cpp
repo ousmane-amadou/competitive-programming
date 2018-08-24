@@ -2,6 +2,7 @@
 Programming Challenges; 1.6.2 Minesweeper
 Problem Type: Ad hoc
 */
+
 #include <iostream>
 using namespace std;
 
@@ -9,7 +10,9 @@ const int MAX_SIZE = 100;
 const int EMPTY = 1;
 const int MINE = -1;
 
-/* Calculate the number of mines adjacent to the specified
+/* 
+
+1. Calculate the number of mines adjacent to the specified
 square.
 
 Precondition (s):
@@ -56,6 +59,7 @@ int adjcancey_field[MAX_SIZE][MAX_SIZE]; // Represents the output matrix
 int main() {
   char input;
   scanf("%d %d", &n, &m);
+  
   // Step 1: Process Input Matrix (mine_field)
   // Runtime complexity: O(1)
   for (int i = 0; i < n; i++) {
