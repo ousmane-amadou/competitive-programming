@@ -13,7 +13,6 @@ void decrypt(string* dict, string* words);
 
 int main() {
 	int n;
-	map<char, set<char>> solution;
 	
 	vector<string> dictionary;
 	vector<string> encrypted_words;
@@ -30,6 +29,23 @@ int main() {
 	cout << "Hello World!" << endl;
 }
 
+void decrypt(vector<string> dictionary, vector<string> encrypted_words() {
+	map<char, set<char>> solution;
+	
+	for (int i = 0; i < encrypted_words.size(); i++) {
+		string word = encrypted_words[i];
+		for (int j = 0; j < word.size(); j++) {
+			set<char> poss_solutions = get_possible_solutions(word, j, dictionary);
+			
+			update_solution(word[j], poss_solutions, solution);
+			
+			// Case: Need to filter solution for character, such that
+			// entire words are taken into account
+			if (solution[word[j]].size() == 1):
+		       			
+		}
+	}	
+}
 bool update_solution(char ch, set<char> poss_solutions, map<char, set<char>> solution) {
 	if (solution.find(ch) == 0) {
 		if (poss_solutions.size() == 0) {
