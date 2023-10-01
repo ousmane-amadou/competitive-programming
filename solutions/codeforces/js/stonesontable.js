@@ -9,8 +9,12 @@ function deleteCharAt(str, i) {
 }
 
 var sol = 0;
-for(var i; i < stone_length-1; i++) {
-    print(stones.charAt(i), stones.charAt(i+1))
+
+
+for(var i = 0; i < stone_length-1; i++) {
+    if(stones.length == 1) {
+        break
+    }
     if(stones.charAt(i) == stones.charAt(i+1)) {
         stones = deleteCharAt(stones, i)
         i--; sol++;
@@ -18,4 +22,5 @@ for(var i; i < stone_length-1; i++) {
 }
 
 print(sol);
+
 
