@@ -12,6 +12,7 @@ function allUnique(str) {
     }
     return true;
 }
+
 function deleteCharAt(str, i) {
     return str.substring(0, i+1) + str.slice(i+2)
 }
