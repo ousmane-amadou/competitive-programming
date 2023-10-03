@@ -1,3 +1,4 @@
+// https://codeforces.com/problemset/problem/96/A
 var s = readline()
 
 var o = 0; var t = 0
